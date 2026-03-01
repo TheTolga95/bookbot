@@ -17,3 +17,20 @@ def count_characters(booktext):
         else:
             characters[booktext[character]] += 1
     return characters
+
+def sort_on(sorted_chars):
+    return sorted_chars["num"]
+
+
+def sort_characters(book_chars):
+    sorted_chars = []
+
+    for char in book_chars:
+        char_count = {}
+        char_count ["char"] = char
+        char_count ["num"] = book_chars[char]
+        sorted_chars.append(char_count)
+    
+    sorted_chars.sort(reverse=True, key=sort_on)
+    return sorted_chars
+    
