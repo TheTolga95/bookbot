@@ -6,3 +6,14 @@ def get_book_text(bookpath):
 
 def get_word_count(booktext):
     return booktext.split()
+
+def count_characters(booktext):
+    booktext = booktext.lower()
+    characters = {}
+
+    for character in range(0,len(booktext)):
+        if booktext[character] not in characters:
+            characters[booktext[character]] = 1
+        else:
+            characters[booktext[character]] += 1
+    return characters
